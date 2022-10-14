@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var carsListViewModel = CarsListViewModel()
+
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+         CarsListView(viewModel: carsListViewModel)
     }
 }
 

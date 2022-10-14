@@ -10,8 +10,8 @@ import SwiftUI
 struct CarDetailView: View {
     @ObservedObject var car: CarDetailViewModel
 
-    init(car: Car) {
-        self.car = CarDetailViewModel(car: car)
+    init(car: CarDetailViewModel) {
+        self.car = car
     }
 
     var body: some View {
@@ -50,6 +50,6 @@ struct CarDetailView_Previews: PreviewProvider {
         rating: 3
     )
 
-        CarDetailView(car: car)
+        CarDetailView(car: CarDetailViewModel(car: car))
     }
 }

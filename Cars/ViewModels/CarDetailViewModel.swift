@@ -63,6 +63,10 @@ class CarDetailViewModel: ObservableObject {
     }
 
     var imageName: String {
-        return model.replacingOccurrences(of: " ", with: "_")
+        return make.replacingOccurrences(of: " ", with: "_") + "_" + model.replacingOccurrences(of: " ", with: "_")
+    }
+
+    var id: UUID {
+        return UUID()
     }
 }
