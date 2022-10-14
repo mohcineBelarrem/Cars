@@ -11,7 +11,7 @@ struct Car: Decodable {
     let consList: [String]
     let customerPrice: Double
     let make: String
-    let makretPrice: Double
+    let marketPrice: Double
     let model: String
     let prosList: [String]
     let rating: Int

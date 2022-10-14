@@ -38,7 +38,7 @@ class CarDetailViewModel: ObservableObject {
     }
 
     var formattedMarketPrice: String {
-        let price = Int(car.makretPrice/1000.0)
+        let price = Int(car.marketPrice/1000.0)
         return "Price : \(price)k"
     }
 

@@ -44,7 +44,7 @@ struct CarDetailView_Previews: PreviewProvider {
         consList: ["Bad direction"],
         customerPrice: 120000.0,
         make: "Land Rover",
-        makretPrice: 125000.0,
+        marketPrice: 125000.0,
         model: "Range Rover",
         prosList: ["You can go everywhere", "Good sound system"],
         rating: 3
