@@ -11,9 +11,25 @@ struct CarsListView: View {
     var viewModel: CarsListViewModel
 
     var body: some View {
-        List(self.viewModel.cars, id: \.id) { car in
-           CarDetailView(car: car)
+        List() {
+            ForEach(self.viewModel.cars, id: \.id) { car in
+                Button(action: { print(car.id) }) {
+                    VStack() {
+                        HStack() {
+                            CarDetailView(car: car)
+                            Spacer()
+                        }
+                        SeparatorView()
+                            .background(.white)
+                    }
+                }
+                .listRowSeparator(.hidden)
+                .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+                .listRowBackground(Color.lightGray)
+            }
         }
+        .listStyle(.plain)
+        .background(Color.white)
     }
 }
 

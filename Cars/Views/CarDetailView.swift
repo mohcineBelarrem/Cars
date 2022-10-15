@@ -19,21 +19,21 @@ struct CarDetailView: View {
             Image(car.imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 150, height: 100)
+                .frame(width: 100, height: 75)
             VStack(alignment: .leading) {
                 Text(car.model)
-                    .font(.title2)
+                    .font(.title3)
                     .fontWeight(.bold)
                     .foregroundColor(Color.text)
                 Text(car.formattedMarketPrice)
-                    .font(.subheadline)
+                    .font(.caption)
                     .fontWeight(.semibold)
                     .foregroundColor(Color.text)
                 Spacer()
                     .frame(height: 10)
                 CarRatingView(rating: car.rating)
             }
-        }
+        }.padding(10)
     }
 }
 
