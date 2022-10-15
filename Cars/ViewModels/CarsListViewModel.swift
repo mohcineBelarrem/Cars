@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import CoreVideo
 
 
 class CarsListViewModel: ObservableObject {
@@ -27,27 +28,12 @@ class CarsListViewModel: ObservableObject {
 
     func filterByMake(_ make: Make) {
         selectedMake = make.id
-
-        if selectedModel.isEmpty {
-            cars = originalCars
-        }
-
-        if !selectedMake.isEmpty {
-            cars = cars.filter { $0.make == make.id }
-        }
-
+        cars = originalCars.filter { $0.make.includes(make.id) && $0.model.includes(selectedModel) }
     }
 
     func filterByModel(_ model: Model) {
         selectedModel = model.id
-
-        if selectedMake.isEmpty {
-            cars = originalCars
-        }
-
-        if !selectedModel.isEmpty {
-            cars = cars.filter { $0.model == model.id }
-        }
+        cars = originalCars.filter { $0.model.includes(model.id) && $0.make.includes(selectedMake) }
     }
 
     var allMakes: [Make] {
