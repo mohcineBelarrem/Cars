@@ -9,7 +9,12 @@ import SwiftUI
 
 struct CarsListView: View {
     @ObservedObject var viewModel: CarsListViewModel
-    @State var selectedCarId: String = ""
+    @State var selectedCarId: String
+
+    init(viewModel: CarsListViewModel) {
+        self.viewModel = viewModel
+        selectedCarId = viewModel.cars.first?.id.uuidString ?? ""
+    }
 
     var body: some View {
         List() {
