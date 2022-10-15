@@ -13,11 +13,19 @@ struct CarsListView: View {
 
     init(viewModel: CarsListViewModel) {
         self.viewModel = viewModel
-        selectedCarId = viewModel.cars.first?.id.uuidString ?? ""
+        selectedCarId = viewModel.firstCarId
     }
 
     var body: some View {
         List() {
+
+            FiltersView(
+                makes: viewModel.allMakes,
+                models: viewModel.allModels,
+                makeFilter: { make in viewModel.filterByMake(make.id) },
+                modelFilter: { model in viewModel.filterByModel(model.id) }
+            )
+
             ForEach(self.viewModel.cars, id: \.id) { car in
                 Button(action: {
                     print("selecting \(car.id)")
