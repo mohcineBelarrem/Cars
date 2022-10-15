@@ -23,14 +23,15 @@ class CarServiceTests: XCTestCase {
 
     func testDataIsWellRead() {
         let cars = service.getCars()
-        XCTAssertEqual(cars.count, 4)
-        XCTAssertEqual(cars.last?.model, "GLE coupe")
-        XCTAssertEqual(cars.last?.make, "Mercedes Benz")
-        XCTAssertEqual(cars.last?.rating, 2)
-        XCTAssertEqual(cars.last?.marketPrice, 85900.0)
-        XCTAssertEqual(cars.last?.customerPrice, 95000.0)
-        XCTAssertEqual(cars.last?.prosList, [])
-        XCTAssertEqual(cars.last?.consList, ["You may lose a wheel", "Expensive maintenance"])
+        XCTAssertEqual(cars.count, 10)
+        let car = cars[3]
+        XCTAssertEqual(car.model, "GLE coupe")
+        XCTAssertEqual(car.make, "Mercedes Benz")
+        XCTAssertEqual(car.rating, 2)
+        XCTAssertEqual(car.marketPrice, 85900.0)
+        XCTAssertEqual(car.customerPrice, 95000.0)
+        XCTAssertEqual(car.prosList, [])
+        XCTAssertEqual(car.consList, ["You may lose a wheel", "Expensive maintenance"])
     }
 
 }
