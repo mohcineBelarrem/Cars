@@ -32,3 +32,9 @@ struct Car: Decodable {
 //   ],
 //   "rating":3
 //},
+
+
+protocol CarFilterAttribute: Identifiable {
+    var id : String { get set }
+    var displayValue: String { get set }
+}
