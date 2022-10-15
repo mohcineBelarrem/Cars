@@ -59,5 +59,85 @@
 
       ],
       "rating":2
+   },
+   {
+      "consList":[
+         "💩 car but with the Mercededes logo",
+         "Expensive maintenance"
+      ],
+      "customerPrice":35000.0,
+      "make":"Mercedes Benz",
+      "marketPrice":32900.0,
+      "model":"A Class",
+      "prosList":[
+
+      ],
+      "rating":1
+   },
+   {
+      "consList":[
+         "Expensive maintenance"
+      ],
+      "customerPrice":89000.0,
+      "make":"Mercedes Benz",
+      "marketPrice":88000.0,
+      "model":"E Class",
+      "prosList":[
+          "The beginning of luxury"
+      ],
+      "rating":4
+   },
+   {
+      "consList":[
+         "Expensive maintenance"
+      ],
+      "customerPrice":150000.0,
+      "make":"Mercedes Benz",
+      "marketPrice":156000.0,
+      "model":"S Class",
+      "prosList":[
+          "Luxurious Vessel",
+          "Social status changer"
+      ],
+      "rating":5
+   },
+   {
+      "consList":[
+         "Lol I can't fit inside"
+      ],
+      "customerPrice":10000.12,
+      "make":"Peugot",
+      "marketPrice":11000.12,
+      "model":"208",
+      "prosList":[
+
+      ],
+      "rating":1
+   },
+   {
+      "consList":[
+          "still too small"
+      ],
+      "customerPrice":95000.0,
+      "make":"Peugot",
+      "marketPrice":85900.0,
+      "model":"308",
+      "prosList":[
+
+      ],
+      "rating":2
+   },
+   {
+      "consList":[
+          "fake luxury"
+      ],
+      "customerPrice":95000.0,
+      "make":"Peugot",
+      "marketPrice":85900.0,
+      "model":"5008",
+      "prosList":[
+          "Comfy"
+      ],
+      "rating":3
    }
 ]
