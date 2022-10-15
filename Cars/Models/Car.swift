@@ -34,7 +34,7 @@ struct Car: Decodable {
 //},
 
 
-protocol CarFilterAttribute: Identifiable {
+protocol CarFilterAttribute: Identifiable, Hashable {
     var id : String { get set }
     var displayValue: String { get set }
 }

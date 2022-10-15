@@ -46,7 +46,9 @@ class CarsListViewModel: ObservableObject {
             cars = originalCars.filter { $0.model == selectedModel }
         }
 
-        return [Make(id: "", displayValue: "Any Make")] + cars.map { Make(id: $0.make, displayValue: $0.make ) }
+        let makes = Array(Set(cars.map { Make(id: $0.make, displayValue: $0.make ) }))
+
+        return [Make(id: "", displayValue: "Any Make")] + makes
     }
 
     var allModels: [Model] {
