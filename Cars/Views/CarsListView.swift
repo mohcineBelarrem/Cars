@@ -8,15 +8,19 @@
 import SwiftUI
 
 struct CarsListView: View {
-    var viewModel: CarsListViewModel
+    @ObservedObject var viewModel: CarsListViewModel
+    @State var selectedCarId: String = ""
 
     var body: some View {
         List() {
             ForEach(self.viewModel.cars, id: \.id) { car in
-                Button(action: { print(car.id) }) {
+                Button(action: {
+                    print("selecting \(car.id)")
+                    self.selectedCarId = car.id.uuidString
+                }) {
                     VStack() {
                         HStack() {
-                            CarDetailView(car: car, isSelected: true)
+                            CarDetailView(car: car, selectedId: $selectedCarId)
                             Spacer()
                         }
                         SeparatorView()

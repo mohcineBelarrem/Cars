@@ -9,12 +9,7 @@ import SwiftUI
 
 struct CarDetailView: View {
     @ObservedObject var car: CarDetailViewModel
-    @State var isSelected: Bool
-
-    init(car: CarDetailViewModel, isSelected: Bool) {
-        self.car = car
-        self.isSelected = isSelected
-    }
+    @Binding var selectedId: String
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -38,7 +33,7 @@ struct CarDetailView: View {
                 }
             }
 
-            if isSelected {
+            if selectedId == car.id.uuidString {
                 VStack(alignment: .leading) {
                     if !car.prosList.isEmpty {
                         Text("Pros : ")
@@ -81,6 +76,6 @@ struct CarDetailView_Previews: PreviewProvider {
         rating: 3
     )
 
-        CarDetailView(car: CarDetailViewModel(car: car), isSelected: true)
+        CarDetailView(car: CarDetailViewModel(car: car), selectedId: .constant(""))
     }
 }
