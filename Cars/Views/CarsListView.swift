@@ -10,6 +10,8 @@ import SwiftUI
 struct CarsListView: View {
     @ObservedObject var viewModel: CarsListViewModel
     @State var selectedCarId: String
+    @State var selectedMake : Make?
+    @State var selectedModel : Model?
 
     init(viewModel: CarsListViewModel) {
         self.viewModel = viewModel
@@ -19,18 +21,23 @@ struct CarsListView: View {
     var body: some View {
         List() {
 
-            FiltersView(
+            let filtersViewModel = FiltersViewModel(
                 makes: viewModel.allMakes,
                 models: viewModel.allModels,
+                selectedMake: selectedMake,
+                selectedModel: selectedModel,
                 makeFilter: { make in
                     viewModel.filterByMake(make)
+                    selectedMake = make
                     selectedCarId = viewModel.firstCarId
                 },
                 modelFilter: { model in
                     viewModel.filterByModel(model)
+                    selectedModel = model
                     selectedCarId = viewModel.firstCarId
                 }
             )
+            FiltersView(viewModel: filtersViewModel)
 
             ForEach(self.viewModel.cars, id: \.id) { car in
                 Button(action: {

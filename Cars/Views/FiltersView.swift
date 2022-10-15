@@ -8,28 +8,8 @@
 import SwiftUI
 
 struct FiltersView: View {
-    var makes: [Make]
-    var models: [Model]
 
-    @State var selectedMake: Make
-    @State var selectedModel: Model
-
-    var makeFilter : (Make) -> Void
-    var modelFilter : (Model) -> Void
-
-    init(
-        makes: [Make],
-        models: [Model],
-        makeFilter: @escaping (Make) -> Void = { _ in },
-        modelFilter: @escaping (Model) -> Void = { _ in }
-    ) {
-        self.makes = makes
-        self.models = models
-        self.selectedMake = makes.first ?? Make(id: "", displayValue: "Any make")
-        self.selectedModel = models.first ?? Model(id: "", displayValue: "Any model")
-        self.makeFilter = makeFilter
-        self.modelFilter = modelFilter
-    }
+    @ObservedObject var viewModel: FiltersViewModel
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -43,17 +23,16 @@ struct FiltersView: View {
             .padding(.init(top: 10, leading: 15, bottom: 0, trailing: 15))
 
             Menu {
-                ForEach(makes, id:\.id) { make in
+                ForEach(viewModel.makes, id:\.id) { make in
                     Button(action: {
-                        self.selectedMake = make
-                        makeFilter(make)
+                        viewModel.filter(using: make)
                     }, label: {
                         Text(make.displayValue)
                     })
                 }
             } label: {
                 HStack {
-                    Text(self.selectedMake.displayValue)
+                    Text(viewModel.selectedMake.displayValue)
                         .fontWeight(.bold)
                         .padding(5)
                     Spacer()
@@ -66,17 +45,16 @@ struct FiltersView: View {
 
 
             Menu {
-                ForEach(models, id:\.id) { model in
+                ForEach(viewModel.models, id:\.id) { model in
                     Button(action: {
-                        self.selectedModel = model
-                        modelFilter(model)
+                        viewModel.filter(using: model)
                     }, label: {
                         Text(model.displayValue)
                     })
                 }
             } label: {
                 HStack {
-                    Text(self.selectedModel.displayValue)
+                    Text(viewModel.selectedModel.displayValue)
                         .fontWeight(.bold)
                         .padding(5)
                     Spacer()
@@ -108,6 +86,8 @@ struct FiltersView_Previews: PreviewProvider {
                      Model(id: "5", displayValue: "5"),
                      Model(id: "6", displayValue: "6")]
 
-        FiltersView(makes: makes, models: models)
+        let viewModel = FiltersViewModel(makes: makes, models: models)
+
+        FiltersView(viewModel: viewModel)
     }
 }

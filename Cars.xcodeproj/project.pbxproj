@@ -32,6 +32,7 @@
 		B493255228FB18C200E12C4A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B493255128FB18C200E12C4A /* Model.swift */; };
 		B493255428FB25B900E12C4A /* CarsListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B493255328FB25B900E12C4A /* CarsListViewModelTests.swift */; };
 		B493255628FB4F7400E12C4A /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B493255528FB4F7400E12C4A /* String+Extension.swift */; };
+		B493255828FB587100E12C4A /* FiltersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B493255728FB587100E12C4A /* FiltersViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		B493255128FB18C200E12C4A /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		B493255328FB25B900E12C4A /* CarsListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListViewModelTests.swift; sourceTree = "<group>"; };
 		B493255528FB4F7400E12C4A /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		B493255728FB587100E12C4A /* FiltersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 			children = (
 				B491D4D028F9D9390096A299 /* CarDetailViewModel.swift */,
 				B491D4DE28F9F7F70096A299 /* CarsListViewModel.swift */,
+				B493255728FB587100E12C4A /* FiltersViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B493255628FB4F7400E12C4A /* String+Extension.swift in Sources */,
+				B493255828FB587100E12C4A /* FiltersViewModel.swift in Sources */,
 				B493255228FB18C200E12C4A /* Model.swift in Sources */,
 				B493254E28FB0C3D00E12C4A /* FiltersView.swift in Sources */,
 				B493254A28FAA56E00E12C4A /* SeparatorView.swift in Sources */,
