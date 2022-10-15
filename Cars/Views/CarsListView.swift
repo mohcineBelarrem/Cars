@@ -22,8 +22,8 @@ struct CarsListView: View {
             FiltersView(
                 makes: viewModel.allMakes,
                 models: viewModel.allModels,
-                makeFilter: { make in viewModel.filterByMake(make.id) },
-                modelFilter: { model in viewModel.filterByModel(model.id) }
+                makeFilter: { make in viewModel.filterByMake(make) },
+                modelFilter: { model in viewModel.filterByModel(model) }
             )
 
             ForEach(self.viewModel.cars, id: \.id) { car in
