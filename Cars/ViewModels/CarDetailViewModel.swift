@@ -25,8 +25,10 @@ import Combine
 //},
 
 
-class CarDetailViewModel: ObservableObject {
+class CarDetailViewModel: ObservableObject, Identifiable {
     @Published var car: Car
+
+    let id = UUID()
 
     init(car: Car) {
         self.car = car
@@ -55,18 +57,14 @@ class CarDetailViewModel: ObservableObject {
     }
 
     var consList: [String] {
-        return car.consList
+        return car.consList.filter { !$0.isEmpty }
     }
 
     var prosList: [String] {
-        return car.prosList
+        return car.prosList.filter { !$0.isEmpty }
     }
 
     var imageName: String {
         return make.replacingOccurrences(of: " ", with: "_") + "_" + model.replacingOccurrences(of: " ", with: "_")
-    }
-
-    var id: UUID {
-        return UUID()
     }
 }

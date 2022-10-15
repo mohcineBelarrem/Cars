@@ -26,6 +26,7 @@
 		B491D4DF28F9F7F70096A299 /* CarsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B491D4DE28F9F7F70096A299 /* CarsListViewModel.swift */; };
 		B491D4E128F9FCEB0096A299 /* CartDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B491D4E028F9FCEB0096A299 /* CartDetailViewModelTests.swift */; };
 		B493254A28FAA56E00E12C4A /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B493254928FAA56E00E12C4A /* SeparatorView.swift */; };
+		B493254C28FAB83500E12C4A /* BulletPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B493254B28FAB83500E12C4A /* BulletPointView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		B491D4DE28F9F7F70096A299 /* CarsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListViewModel.swift; sourceTree = "<group>"; };
 		B491D4E028F9FCEB0096A299 /* CartDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDetailViewModelTests.swift; sourceTree = "<group>"; };
 		B493254928FAA56E00E12C4A /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
+		B493254B28FAB83500E12C4A /* BulletPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletPointView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 			children = (
 				B491D4DC28F9F7C20096A299 /* CarsListView.swift */,
 				B493254928FAA56E00E12C4A /* SeparatorView.swift */,
+				B493254B28FAB83500E12C4A /* BulletPointView.swift */,
 				B491D4CD28F9D8220096A299 /* CarDetailView.swift */,
 				B491D4D528F9E7470096A299 /* CarRatingView.swift */,
 			);
@@ -344,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B493254A28FAA56E00E12C4A /* SeparatorView.swift in Sources */,
+				B493254C28FAB83500E12C4A /* BulletPointView.swift in Sources */,
 				B491D4D628F9E7470096A299 /* CarRatingView.swift in Sources */,
 				B491D4D128F9D9390096A299 /* CarDetailViewModel.swift in Sources */,
 				B491D4D928F9EFAF0096A299 /* CarService.swift in Sources */,

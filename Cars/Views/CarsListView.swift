@@ -16,7 +16,7 @@ struct CarsListView: View {
                 Button(action: { print(car.id) }) {
                     VStack() {
                         HStack() {
-                            CarDetailView(car: car)
+                            CarDetailView(car: car, isSelected: true)
                             Spacer()
                         }
                         SeparatorView()
